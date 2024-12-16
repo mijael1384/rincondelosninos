@@ -1,0 +1,248 @@
+/* General Styles */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #000000;
+    --hover-color: #ff4500;
+    --background-light: #fff8e1;
+    --text-color: #333;
+    --text-light: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .menu-toggle {
+    display: none; 
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+header nav {
+    display: flex;
+    gap: 15px;
+}
+
+header nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: var(--hover-color);
+}
+
+.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    header .menu-toggle {
+        display: block; 
+    }
+
+    header nav {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    header nav.active {
+        display: flex; 
+    }
+
+    header nav a {
+        margin: 10px 0;
+        font-size: 1.2rem;
+    }
+}
+
+/* Hero Section */
+#hero {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+#hero button {
+    background-color: var(--hover-color);
+    color: var(--text-light);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#hero button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Somos Section */
+#somosya .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+}
+
+#somosya .img-container {
+    flex: 1;
+    max-width: 400px;
+    height: 300px; 
+}
+
+#somosya .img {
+    width: 100%;
+    height: 100%; 
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+}
+
+#somosya .texto {
+    flex: 1;
+    max-width: 600px;
+    padding: 20px;
+    text-align: left;
+}
+
+.color-somos {
+    color: var(--primary-color);
+} 
+
+#somosya {
+    margin-top: 50px; 
+}
+
+/* Productos Section */
+#productos {
+    padding: 50px 15px;
+    background-color: var(--background-light);
+    color: var(--text-color);
+}
+
+#productos h2 {
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 1.8em;
+}
+
+#productos .habitacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.carta {
+    background: var(--background-light);
+    color: var(--text-color);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carta img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.carta p {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.carta button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carta button:hover {
+    transform: scale(1.05);
+    background-color: var(--hover-color);
+}
+
+.carta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+footer {
+    background-color: var(--background-light);
+    color: rgb(100, 100, 100);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9em;
+}
